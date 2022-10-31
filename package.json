@@ -1,0 +1,23 @@
+{
+  "name": "t3h-theme",
+  "version": "1.0.0",
+  "description": "my css",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t3hmun/t3h-theme.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t3hmun/t3h-theme/issues"
+  },
+  "homepage": "https://github.com/t3hmun/t3h-theme#readme",
+  "dependencies": {
+    "prettier": "^2.7.1",
+    "sass": "^1.55.0"
+  }
+}

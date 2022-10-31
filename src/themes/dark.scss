@@ -1,9 +1,80 @@
+@use "sass:color";
 @use "../normalize";
+
+$base-size: 1rem;
 
 $back-colour: #333 !default;
 $fore-colour: #eee !default;
+$text-colour: $fore-colour;
+$theme-colour: #fc8803;
+$muted-colour: #b15f02;
+$link-colour: #80b418;
+
+$link-hover-colour: $theme-colour;
+
+$muted-back-colour: (color.mix($theme-colour, $back-colour, 20%));
+$muted-fore-colour: color.scale(
+  color.mix($theme-colour, $text-colour, 50%),
+  $lightness: -10%
+);
+
+$h1-colour: $theme-colour;
+$h2-colour: color.mix($text-colour, $theme-colour, 50%);
+$h3-colour: color.mix($text-colour, $theme-colour, 50%);
+$h4-colour: color.mix($text-colour, $theme-colour, 50%);
+$h5-colour: color.mix($text-colour, $theme-colour, 75%);
+$h6-colour: color.mix($text-colour, $theme-colour, 100%);
+
+$main-font: sans-serif;
+$mono-font: monospace;
 
 :root {
   color: $fore-colour;
   background-color: $back-colour;
+  size: $base-size;
+  font-family: $main-font;
+}
+
+$colours: (
+  "text": $text-colour,
+  "fore": $fore-colour,
+  "back": $back-colour,
+  "muted": $muted-colour,
+  "link": $link-colour,
+  "muted-fore": $muted-fore-colour,
+  "muted-back": $muted-back-colour,
+  "h1": $h1-colour,
+  "h2": $h2-colour,
+  "h3": $h3-colour,
+  "h4": $h4-colour,
+  "h5": $h5-colour,
+  "h6": $h6-colour,
+);
+
+@each $name, $colour in $colours {
+  .bg-#{$name} {
+    background-color: $colour;
+  }
+  .fg-#{$name} {
+    color: $colour;
+  }
+}
+
+h1 {
+  color: $h1-colour;
+}
+h2 {
+  color: $h3-colour;
+}
+h3 {
+  color: $h3-colour;
+}
+h4 {
+  color: $h4-colour;
+}
+h5 {
+  color: $h5-colour;
+}
+h6 {
+  color: $h6-colour;
 }

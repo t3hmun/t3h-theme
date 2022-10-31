@@ -13,21 +13,94 @@
       <div>
         <button id="theme-toggle">toggle theme</button>
       </div>
-      <p>Hello</p>
+      <section>
+        <h2>Headings</h2>
+        <p>See directly above for `h2` and top of document for `h1`.</p>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+      </section>
+      <section>
+        <h2>Colours</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Class Suffix</th>
+              <th>Colour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>text</td>
+              <td class="bg-text">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>fore</td>
+              <td class="bg-fore">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>back</td>
+              <td class="bg-back">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>link</td>
+              <td class="bg-link">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>muted fore</td>
+              <td class="bg-muted-fore">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>muted back</td>
+              <td class="bg-muted-back">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h1</td>
+              <td class="bg-h1">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h2</td>
+              <td class="bg-h2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h3</td>
+              <td class="bg-h3">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h4</td>
+              <td class="bg-h4">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h5</td>
+              <td class="bg-h5">&nbsp;</td>
+            </tr>
+            <tr>
+              <td>h6</td>
+              <td class="bg-h6">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The link colour is different from the theme colour. Theme is used as a
+          general accent, link colour means action.
+        </p>
+        <p>
+          The headings fade from the theme colour at `h1` to normal text colour
+          at `h6`.
+        </p>
+      </section>
     </main>
   </body>
   <script>
-    let dark = true;
+    // Script to toggle light dark theme by changing the stylesheet.
     const button = document.getElementById("theme-toggle");
-    const cssLink = document.getElementById("css-link");
+    const mainCssEle = document.getElementById("css-link");
     button.onclick = () => {
-      if (dark) {
-        cssLink.setAttribute("href", "gen/light.css");
-        dark = false;
-      } else {
-        cssLink.setAttribute("href", "gen/dark.css");
-        dark = true;
-      }
+      let cssUrl = mainCssEle.getAttribute("href");
+      if (cssUrl.endsWith("dark.css")) cssUrl = cssUrl.replace("dark", "light");
+      else cssUrl = cssUrl.replace("light", "dark");
+      mainCssEle.setAttribute("href", cssUrl);
     };
   </script>
 </html>

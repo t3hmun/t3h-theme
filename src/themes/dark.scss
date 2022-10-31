@@ -1,0 +1,9 @@
+@use "../normalize";
+
+$back-colour: #333 !default;
+$fore-colour: #eee !default;
+
+:root {
+  color: $fore-colour;
+  background-color: $back-colour;
+}

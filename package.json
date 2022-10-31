@@ -4,7 +4,9 @@
   "description": "my css",
   "main": " ",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "light": "sass --watch src/themes/light.scss preview/gen/light.css",
+    "dark": "sass --watch src/themes/dark.scss preview/gen/dark.css",
+    "all": "sass --watch src/themes/:preview/gen/"
   },
   "repository": {
     "type": "git",

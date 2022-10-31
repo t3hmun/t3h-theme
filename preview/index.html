@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="css-link" href="gen/dark.css" rel="stylesheet" />
+    <title>Theme Preview</title>
+  </head>
+  <body>
+    <main>
+      <h1>Theme preview</h1>
+      <div>
+        <button id="theme-toggle">toggle theme</button>
+      </div>
+      <p>Hello</p>
+    </main>
+  </body>
+  <script>
+    let dark = true;
+    const button = document.getElementById("theme-toggle");
+    const cssLink = document.getElementById("css-link");
+    button.onclick = () => {
+      if (dark) {
+        cssLink.setAttribute("href", "gen/light.css");
+        dark = false;
+      } else {
+        cssLink.setAttribute("href", "gen/dark.css");
+        dark = true;
+      }
+    };
+  </script>
+</html>

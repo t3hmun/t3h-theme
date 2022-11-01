@@ -6,7 +6,8 @@
   "scripts": {
     "light": "sass --watch src/themes/light.scss preview/gen/light.css",
     "dark": "sass --watch src/themes/dark.scss preview/gen/dark.css",
-    "all": "sass --watch src/themes/:preview/gen/"
+    "all": "sass --watch src/themes/:preview/gen/",
+    "build": "sass --style=compressed src/themes/:build/"
   },
   "repository": {
     "type": "git",

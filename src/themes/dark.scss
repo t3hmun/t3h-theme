@@ -265,7 +265,101 @@ h6 {
   color: $h6-colour;
 }
 
-// Generate Colour Classes
+//
+// Style Classes
+//
+
+%centre-block {
+  max-width: $content-width;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.masthead {
+  // This class is used for the site masthead.
+  font-size: $masthead-size;
+  font-weight: $h1-weight;
+  line-height: $masthead-line-height;
+  @extend %centre-block;
+}
+
+.main-nav {
+  ul {
+    list-style-type: none;
+    width: auto;
+    max-width: none;
+    padding: 0 0 0 0;
+    li {
+      display: inline;
+      margin: $gutter;
+    }
+  }
+  @extend %centre-block;
+  width: auto;
+  max-width: none;
+}
+
+.footer {
+  @extend %centre-block;
+}
+
+.hatch-box {
+  background: repeating-linear-gradient(
+    120deg,
+    $back-colour,
+    $back-colour 3px,
+    $muted-back-colour 2px,
+    $muted-back-colour 4px
+  );
+}
+
+.header-date-footer {
+  line-height: $base-size;
+  max-width: $content-width;
+  margin: 0 $gutter;
+  color: $muted-fore-colour;
+}
+
+.index-date-footer {
+  line-height: $base-size;
+  max-width: $content-width;
+  margin: 0 $gutter 0 $gutter;
+  color: $muted-fore-colour;
+  font-size: $muted-text-size;
+}
+
+// This puts the date and tags (when implemented) directly under the header.
+.index-header {
+  margin-bottom: 0;
+}
+
+.index-description {
+  max-width: $middle-width;
+  margin: 0 $gutter $line-height $gutter;
+}
+
+//
+// Utility Classes
+//
+
+.content-width {
+  // This class is used for very big images.
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.middle-width {
+  // This class is used for big images.
+  max-width: $middle-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+//
+// Generated Utility Classes
+//
 
 $colours: (
   "text": $text-colour,
